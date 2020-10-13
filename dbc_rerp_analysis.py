@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # Full regression-based Waveform Estimation (rERP) analysis reported in:
@@ -23,7 +23,7 @@ def generate():
         electrodes  = ["Fz", "Cz", "Pz", "F3", "FC1", "FC5", "F4", "FC2", "FC6",
                        "P3", "CP1", "CP5", "P4", "CP2", "CP6", "O1", "Oz", "O2"],
         predictors  = ["Plaus","Assoc"])
- 
+
     obs_data.rename_descriptor_level("Condition", "control",          "baseline")
     obs_data.rename_descriptor_level("Condition", "script-related",   "event-related")
     obs_data.rename_descriptor_level("Condition", "script-unrelated", "event-unrelated")
@@ -40,7 +40,7 @@ def generate():
         ####################
         #### potentials ####
         ####################
-    
+
     print("\n[ figures/dbc_potentials.pdf ]\n")
     obs_data_summary = rerps.models.DataSummary(obs_data, ["Condition", "Subject", "Timestamp"])
     obs_data_summary = rerps.models.DataSummary(obs_data_summary, ["Condition", "Timestamp"])
@@ -73,7 +73,7 @@ def generate():
     est_data0_summary = rerps.models.DataSummary(est_data0, ["Condition", "Subject", "Timestamp"])
     est_data0_summary = rerps.models.DataSummary(est_data0_summary, ["Condition", "Timestamp"])
     colors = ["#1f77b4", "#ff7f0e", "#2ca02c"]
-    fig, ax = rerps.plots.plot_voltages_grid(est_data0_summary, "Timestamp", ["Fz", "Cz", "Pz"], 
+    fig, ax = rerps.plots.plot_voltages_grid(est_data0_summary, "Timestamp", ["Fz", "Cz", "Pz"],
             "Condition", title="regression-based Event-Related Potentials", colors=colors)
     fig.set_size_inches(15, 10)
     fig.savefig("figures/dbc_intercept_est.pdf", bbox_inches='tight')
@@ -87,7 +87,7 @@ def generate():
             "Condition", title="Residuals", colors=colors)
     fig.set_size_inches(15, 10)
     fig.savefig("figures/dbc_intercept_res.pdf", bbox_inches='tight')
-  
+
         ######################
         #### plausibility ####
         ######################
@@ -161,7 +161,7 @@ def generate():
     time_window_averages(est_data, 700, 1000).to_csv("stats/dbc_plaus+assoc_700-1000.csv", index=False)
     print("\n[ stats/dbc_plaus+assoc_800-1000.csv ]\n")
     time_window_averages(est_data, 800, 1000).to_csv("stats/dbc_plaus+assoc_800-1000.csv", index=False)
-    
+
     print("\n[ figures/dbc_plaus+assoc_res.pdf ]\n")
     res_data = rerps.models.residuals(obs_data, est_data)
     res_data_summary = rerps.models.DataSummary(res_data, ["Condition", "Subject", "Timestamp"])
@@ -171,7 +171,7 @@ def generate():
             "Condition", title="Residuals", colors=colors, ymin=-2, ymax=2)
     fig.set_size_inches(15, 10)
     fig.savefig("figures/dbc_plaus+assoc_res.pdf", bbox_inches='tight')
-    
+
     print("\n[ figures/dbc_plaus+assoc_coef.pdf ]\n")
     models_summary = rerps.models.ModelSummary(models, ["Timestamp"])
     colors = ["#d62728", "#9467bd", "#8c564b"]
