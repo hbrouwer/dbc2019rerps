@@ -173,8 +173,8 @@ def plot_coefficients(msm, x, y, anchor=True, title=None, legend=True, ax=None, 
         x (:obj:`str`):
             name of the descriptor column that determines the x-axis
             (typically 'time').
-        ys (:obj:`list` of :obj:`str`):
-            names of electrodes to be plotted.
+        y (:obj:`str`):
+            name of electrode to be plotted.
         anchor (:obj:`bool`):
             flags whether slopes should be anchored to the intercept.
         title (:obj:`str`):
