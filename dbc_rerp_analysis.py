@@ -167,8 +167,10 @@ def generate():
     res_data_summary = rerps.models.DataSummary(res_data, ["Condition", "Subject", "Timestamp"])
     res_data_summary = rerps.models.DataSummary(res_data_summary, ["Condition", "Timestamp"])
     colors = ["#1f77b4", "#ff7f0e", "#2ca02c"]
+    # fig, ax = rerps.plots.plot_voltages_grid(res_data_summary, "Timestamp", ["Fz", "Cz", "Pz"],
+            # "Condition", title="Residuals", colors=colors, ymin=-2, ymax=2)
     fig, ax = rerps.plots.plot_voltages_grid(res_data_summary, "Timestamp", ["Fz", "Cz", "Pz"],
-            "Condition", title="Residuals", colors=colors, ymin=-2, ymax=2)
+            "Condition", title="Residuals", colors=colors, ymin=2, ymax=-2)
     fig.set_size_inches(15, 10)
     fig.savefig("figures/dbc_plaus+assoc_res.pdf", bbox_inches='tight')
     

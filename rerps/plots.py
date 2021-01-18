@@ -15,7 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# ---- Last modified: September 2020, Harm Brouwer ----
+# ---- Last modified: January 2021, Harm Brouwer ----
 
 import rerps.models as models
 
@@ -74,6 +74,7 @@ def plot_voltages(dsm, x, y, groupby, title=None, legend=True, ax=None, colors=N
     if (ax == None):
         newfig = True
         fig, ax = plt.subplots()
+        ax.invert_yaxis()
 
     if (colors):
         ax.set_prop_cycle(color=colors)
@@ -110,13 +111,11 @@ def plot_voltages(dsm, x, y, groupby, title=None, legend=True, ax=None, colors=N
     
     if (ymin and ymax):
         ax.set_ylim(ymin, ymax)
-    ax.invert_yaxis()
     
     if (legend):
         ax.legend(loc = "lower left", fontsize=14)
     if (title):
         ax.set_title(title, fontsize=16)
-
 
     if (newfig):
         return fig, ax
@@ -157,6 +156,7 @@ def plot_voltages_grid(dsm, x, ys, groupby, title=None, colors=None, ymin=None, 
     for i, y in enumerate(ys):
         if (i == len(ys) - 1):
             legend = True
+            axes[i].invert_yaxis()
         plot_voltages(dsm, x, y, groupby, title=y, legend=legend, ax=axes[i], colors=colors, ymin=ymin, ymax=ymax)
 
     if (title):
@@ -199,6 +199,7 @@ def plot_coefficients(msm, x, y, anchor=True, title=None, legend=True, ax=None, 
     if (ax == None):
         newfig = True
         fig, ax = plt.subplots()
+        ax.invert_yaxis()
 
     if (colors):
         ax.set_prop_cycle(color=colors)
@@ -234,7 +235,6 @@ def plot_coefficients(msm, x, y, anchor=True, title=None, legend=True, ax=None, 
     
     if (ymin and ymax):
         ax.set_ylim(ymin, ymax)
-    ax.invert_yaxis()
     
     if (legend):
         ax.legend(loc = "lower left", fontsize=14)
@@ -279,6 +279,7 @@ def plot_coefficients_grid(msm, x, ys, anchor=True, title=None, colors=None, ymi
     for i, y in enumerate(ys):
         if (i == len(ys) - 1):
             legend = True
+            axes[i].invert_yaxis()
         plot_coefficients(msm, x, y, anchor=anchor, title=y, legend=legend, ax=axes[i], colors=colors, ymin=ymin, ymax=ymax)
 
     if (title):
