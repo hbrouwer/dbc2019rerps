@@ -216,6 +216,7 @@ class DataSet(Set):
         Args:
             filename (:obj:`str`):
                 name of the CSV file to write.
+
         """
         st = time.time()
         
@@ -407,6 +408,7 @@ class DataSummary(SetSummary):
         Args:
             filename (:obj:`str`):
                 name of the CSV file to write.
+
         """
         st = time.time()
         
