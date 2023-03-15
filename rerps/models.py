@@ -15,7 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# ---- Last modified: September 2020, Harm Brouwer ----
+# ---- Last modified: March 2023, Harm Brouwer ----
 
 import copy
 import math
@@ -439,10 +439,9 @@ class ModelSummary(SetSummary):
     
     Attributes:
         means (:obj:`ndarray`):
-            mean voltages for each electrode by descriptor columns
-            (dv).
+            mean coeffcients for each electrode by descriptor columns (dv).
         sems (:obj:`ndarray`):
-            standard errors of the mean voltage for each electrode by
+            standard errors of the mean coefficients for each electrode by
             descriptor columns (dv).
         descriptors (:obj:`OrderedDict`):
             mapping of descriptor column names (keys) to column
