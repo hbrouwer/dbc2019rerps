@@ -3,10 +3,10 @@
 
 # Density plots for association and plausibility ratings, as reported in:
 #
-# Brouwer, H., Delogu, F., and Crocker, M. W. (2020). Splitting
-#   Event‐Related Potentials: Modeling Latent Components using
-#   Regression‐based Waveform Estimation. European Journal of Neuroscience.
-#   doi: 10.1111/ejn.14961
+# Brouwer, H., Delogu, F., and Crocker, M. W. (2021). Splitting
+#   Event-Related Potentials: Modeling Latent Components using
+#   Regression-based Waveform Estimation. European Journal of Neuroscience,
+#   53, pp. 974-995. doi: 10.1111/ejn.14961
 #
 # 10/09/20: Harm Brouwer <me@hbrouwer.eu>
 
