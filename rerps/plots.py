@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 """regression-based ERP estimation.
-    
+
 Minimal implementation of regression-based ERP (rERP) waveform estimation,
 as proposed in:
 

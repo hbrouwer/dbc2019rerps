@@ -28,7 +28,7 @@ import pandas as pd
 import scipy.stats as sps
 
 """regression-based ERP estimation.
-    
+
 Minimal implementation of regression-based ERP (rERP) waveform estimation,
 as proposed in:
 

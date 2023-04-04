@@ -18,7 +18,7 @@
 # ---- Last modified: September 2020, Harm Brouwer ----
 
 """regression-based ERP estimation.
-    
+
 Minimal implementation of regression-based ERP (rERP) waveform estimation,
 as proposed in:
 
