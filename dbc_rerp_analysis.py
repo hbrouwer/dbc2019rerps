@@ -22,7 +22,7 @@ def generate():
         descriptors = ["Subject", "Timestamp", "Condition", "ItemNum"],
         electrodes  = ["Fz", "Cz", "Pz", "F3", "FC1", "FC5", "F4", "FC2", "FC6",
                        "P3", "CP1", "CP5", "P4", "CP2", "CP6", "O1", "Oz", "O2"],
-        predictors  = ["Plaus","Assoc"])
+        predictors  = ["Plaus", "Assoc"])
  
     obs_data.rename_descriptor_level("Condition", "control",          "baseline")
     obs_data.rename_descriptor_level("Condition", "script-related",   "event-related")
